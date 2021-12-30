@@ -1,0 +1,72 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.h1{
+    @apply text-3xl font-black md:max-w-xl md:text-5xl
+}
+
+.h2{
+    @apply text-2xl font-black
+}
+
+.box{
+    @apply relative bg-white p-5 rounded-xl shadow space-y-2 transition-shadow duration-200 hover:shadow-lg
+}
+
+.box-title{
+    @apply ml-16 text-xl font-medium
+}
+
+.box-text{
+    @apply ml-16 text-gray-500
+}
+
+.box-icon{
+    @apply absolute flex items-center justify-center h-12 w-12 rounded-full bg-blue-400 text-white
+}
+
+.contact-opt{
+    @apply block text-blue-500 transition duration-200 hover:text-blue-600
+}
+
+.input-box{
+    @apply w-full px-6 py-3.5 rounded-lg border border-gray-200 shadow-sm appearance-none focus:outline-none focus:ring focus:border-blue-400   
+}
+
+.btn{
+    @apply w-full px-8 py-3.5 transition duration-300 bg-red-500 hover:bg-red-600 shadow text-white font-semibold rounded-lg
+}
+
+.textarea{
+    @apply w-full px-6 py-3.5 rounded-lg border border-gray-200 shadow-sm appearance-none resize-none focus:outline-none focus:ring focus:border-blue-400 
+}
+
+@screen sm{
+    
+    .h2{
+        @apply text-3xl
+    } 
+    .input-box{
+        @apply shadow-sm
+    }    
+    .btn{
+        @apply w-auto
+    }
+}
+
+@screen md{
+   
+    .box{
+        @apply p-8
+    }
+    .contact-opt{
+        @apply text-lg
+    }
+    .input-box{
+        @apply md:text-lg
+    }  
+    .textarea{
+        @apply text-lg
+    }
+}
