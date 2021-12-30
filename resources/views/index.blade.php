@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}"/>
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">     
     <title>Legio Soft – Keeping legionella bacteria under control</title>
 </head>
 <body>
     <main>
-        <div class="bg-cover bg-no-repeat bg-right-top xl:bg-bottom" style="background-image: url('assets/img/background.jpg');"><!-- Start Hero Block -->
+        <div class="bg-cover bg-no-repeat bg-right-top xl:bg-bottom" style="background-image: url('assets/img/background.jpg');">
             <div class="container mx-auto px-5 pb-16 sm:pb-16 lg:pb-24 xl:pb-32">
                 <header class="flex justify-between items-center pt-5">
                     <div>
@@ -44,7 +44,7 @@
 
         <div class="border-t border-gray-200"></div>
 
-        <section class="py-12 lg:py-16 xl:py-28"><!-- Start How It Works Block -->
+        <section class="py-12 lg:py-16 xl:py-28">
             <div class="container mx-auto px-5">
                 <div class="grid gap-6 lg:gap-10 xl:grid-cols-3">
                     <div class="space-y-2 lg:space-y-4">

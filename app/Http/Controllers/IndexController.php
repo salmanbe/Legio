@@ -37,7 +37,6 @@ class IndexController extends Controller
      */
     public function submitForm(Request $request): JsonResponse
     {
-
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
                     'email' => 'required|email|max:255',
@@ -53,7 +52,7 @@ class IndexController extends Controller
         
         $body = view('email.contact')->with(['request'=> $request]);
 
-        Mail::send('email.layout', ['body' => $body], function ($message) use ($request) {
+        Mail::send('email.layout', ['body' => $body], function ($message) {
 
             $message->subject('Nieuw Contact');
             $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
