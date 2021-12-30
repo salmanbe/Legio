@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Http\Controllers\Controller;
 use Validator;
+use Mail;
 
 class IndexController extends Controller
 {
@@ -40,19 +41,26 @@ class IndexController extends Controller
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
                     'email' => 'required|email|max:255',
-                    'phone' => 'required|max:255',
-                    'message' => 'required|max:255',
+                    'phone' => 'required|max:20',
+                    'message' => 'required|max:1000',
                     'g_recaptcha_response' => 'required|recaptcha'
         ]);
 
         if ($validator->fails()) {
-
             $errors = array_map('ucfirst', $validator->errors()->all());
-
             return response()->json(['errors' => implode('<br />', $errors)]);
         }
+        
+        $body = view('email.contact')->with(['request'=> $request]);
 
-        return response()->json(['success' => 'formulier succesvol ingediend']);
+        Mail::send('email.layout', ['body' => $body], function ($message) use ($request) {
+
+            $message->subject('Nieuw Contact');
+            $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            $message->to(env('MAIL_FROM_ADDRESS'));
+        });
+
+        return response()->json(['success' => 'Formulier succesvol ingediend']);
     }
 
 }

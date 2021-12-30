@@ -22,6 +22,13 @@ $(document).ready(function () {
 
                     $('#errors').html(response.errors);
                     $('#errors-div').show();
+
+                    setTimeout(function () {
+                        $('#errors-div').fadeOut('slow', function () {
+                            $('#errors').html('');
+                        });
+                    }, 2000);
+
                 } else {
                     $('#errors').html('');
                     $('#errors-div').hide();
@@ -31,15 +38,14 @@ $(document).ready(function () {
 
                     $('#success').html(response.success);
                     $('#success-div').show();
+                    $('#name, #email, #phone, #message').val('');
+                    grecaptcha.reset();
                 } else {
                     $('#success').html('');
                     $('#success-div').hide();
                 }
-
-
             }
         });
-
     });
 
     $('#btn-contact').click(function () {

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">     
     <title>Legio Soft – Keeping legionella bacteria under control</title>
 </head>
 <body>
     <main>
-        <div class="bg-cover bg-no-repeat bg-right-top xl:bg-bottom" style="background-image: url('assets/img/bg.png');"><!-- Start Hero Block -->
+        <div class="bg-cover bg-no-repeat bg-right-top xl:bg-bottom" style="background-image: url('assets/img/background.jpg');"><!-- Start Hero Block -->
             <div class="container mx-auto px-5 pb-16 sm:pb-16 lg:pb-24 xl:pb-32">
                 <header class="flex justify-between items-center pt-5">
                     <div>
@@ -128,9 +129,9 @@
                         <div class="space-y-2 lg:space-y-4">
                             <h2 class="h2">Contact Ons</h2>
                             <p class="w-full sm:w-1/2 xl:w-80 text-gray-600 md:text-lg">Aut vel cumque cum ut minima tempore aliquid labore. Exercitationem consequatur saepe dolor sequi cum. Aperiam odio rerum sequi nobis sint.</p>
-                            <span href="#" class="contact-opt">+32 477 8044 53</span>
-                            <a href="mailto:info@legiosoft.com" class="contact-opt">info@legiosoft.com</a>
-                            <a href="https://www.legiosoft.com" class="contact-opt">www.legiosoft.com</a>
+                            <span class="contact-opt">+32 477 8044 53</span>
+                            <a href="mailto:info@legiosoft.be" class="contact-opt">info@legiosoft.be</a>
+                            <a href="https://www.legiosoft.be" class="contact-opt">www.legiosoft.be</a>
                         </div>                        
                     </div>
                     <div class="xl:col-span-2">
@@ -147,10 +148,10 @@
                             </div>
                             
                             <div class="flex flex-col space-y-5 mt-2">
-                                <input type="text" id="name" class="input-box" placeholder="Naam*">
-                                <input type="email" id="email" class="input-box" placeholder="Email*">
-                                <input type="text" id="phone" class="input-box" placeholder="Telefoon*">
-                                <textarea id="message" cols="30" rows="3" class="textarea" placeholder="Bericht*"></textarea>
+                                <input type="text" id="name" class="input-box" placeholder="Naam*" maxlength="255">
+                                <input type="email" id="email" class="input-box" placeholder="Email*" maxlength="255">
+                                <input type="text" id="phone" class="input-box" placeholder="Telefoon*" maxlength="20">
+                                <textarea id="message" cols="30" rows="3" class="textarea" placeholder="Bericht*" maxlength="1000"></textarea>
                                 {!! ReCaptcha::htmlFormSnippet()  !!}
                                 <div>
                                     <button class="btn" id="btn-submit">Verzenden</button>
