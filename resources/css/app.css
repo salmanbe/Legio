@@ -2,10 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.h2{
-    @apply text-5xl font-black
-}
-
 .login-input{
     @apply text-sm placeholder-gray-500 pl-10 pr-4 border border-gray-300 w-full py-2 focus:outline-none
 }
@@ -43,10 +39,7 @@
 }
 
 @screen sm{
-    
-    .h2{
-        @apply text-3xl
-    } 
+  
     .input-box{
         @apply shadow-sm
     }    

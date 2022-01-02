@@ -111,7 +111,7 @@
                 <div class="container mx-auto px-5">
                     <div class="grid gap-6 lg:gap-10 xl:grid-cols-3">
                         <div class="space-y-2 lg:space-y-4">
-                            <h2 class="h2">Hoe het werkt</h2>
+                            <h2 class="text-2xl font-black sm:w-2/3 sm:text-4xl md:max-w-xl md:text-3xl">Hoe het werkt</h2>
                             <p class="w-full sm:w-1/2 xl:w-80 text-gray-600 md:text-lg">Voluptates aliquid est labore dignissimos similique incidunt porro temporibus. Omnis commodi dolorem.</p>
                         </div>
                         <div class="grid gap-6 sm:grid-cols-2 lg:gap-10 xl:col-span-2">
@@ -181,7 +181,7 @@
                     <div class="grid gap-6 lg:gap-10 xl:grid-cols-3 mb-7 lg:mb-14">
                         <div class="flex flex-col justify-between space-y-10 xl:space-y-0">
                             <div class="space-y-2 lg:space-y-4">
-                                <h2 class="h2">Contact Ons</h2>
+                                <h2 class="text-2xl font-black sm:w-2/3 sm:text-4xl md:max-w-xl md:text-3xl">Contact Ons</h2>
                                 <p class="w-full sm:w-1/2 xl:w-80 text-gray-600 md:text-lg">Aut vel cumque cum ut minima tempore aliquid labore. Exercitationem consequatur saepe dolor sequi cum. Aperiam odio rerum sequi nobis sint.</p>
                                 <span class="contact-opt">+32 477 8044 53</span>
                                 <a href="mailto:info@legiosoft.be" class="contact-opt">info@legiosoft.be</a>
