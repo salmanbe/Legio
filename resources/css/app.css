@@ -2,12 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.h1{
-    @apply text-3xl font-black md:max-w-xl md:text-5xl
+.h2{
+    @apply text-5xl font-black
 }
 
-.h2{
-    @apply text-2xl font-black
+.login-input{
+    @apply text-sm placeholder-gray-500 pl-10 pr-4 border border-gray-300 w-full py-2 focus:outline-none
 }
 
 .box{
@@ -35,7 +35,7 @@
 }
 
 .btn{
-    @apply w-full px-8 py-3.5 transition duration-300 bg-red-500 hover:bg-red-600 shadow text-white font-semibold rounded-lg
+    @apply flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-red-600 hover:bg-blue-400 rounded py-2 w-full transition duration-150 ease-in
 }
 
 .textarea{
@@ -50,8 +50,9 @@
     .input-box{
         @apply shadow-sm
     }    
-    .btn{
-        @apply w-auto
+   
+    .login-input{
+        @apply sm:text-base
     }
 }
 
