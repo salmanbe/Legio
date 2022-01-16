@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,12 +12,24 @@ const mix = require('laravel-mix');
  |
  */
 
-/*mix.autoload({
-    jquery: ['$', 'window.$', 'window.jQuery']
-});*/
+/*
+ mix.js('resources/js/app.js', 'public/assets/js').postCss('resources/css/app.css', 'public/assets/css', [
+ require('postcss-import'),
+ require('tailwindcss'),
+ require('autoprefixer'),
+ ]);
+ */
 
-mix.js('resources/js/app.js', 'public/assets/js').postCss('resources/css/app.css', 'public/assets/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]);
+mix.js('resources/js/app.js', 'public/assets/js')
+        .postCss('resources/css/app.css', 'public/assets/css')
+        .options({
+            processCssUrls: false,
+            postCss: [tailwindcss('tailwind.config.js')],
+        })
+        .version();
+
+
+mix.combine([
+    'resources/js/jquery-3.6.0.min.js',
+    'resources/js/home.js'
+], 'public/assets/js/app.js');

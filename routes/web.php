@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
   |
  */
 
+Route::post('/submit-form', ['as' => 'submit.form', 'uses' => 'IndexController@submitForm']);
+
+Route::group(['prefix' => '{locale?}', 'middleware' => 'Locale', 'as' => 'prefix.'], function () {
 
     Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
-    Route::post('/submit-form', ['as' => 'submit.form', 'uses' => 'IndexController@submitForm']);
+});

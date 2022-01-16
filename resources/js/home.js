@@ -14,6 +14,7 @@ $(document).ready(function () {
                 phone: $('#phone').val(),
                 message: $('#message').val(),
                 g_recaptcha_response: grecaptcha.getResponse(),
+                locale: params['locale'],
                 _token: params['token']
             },
             success: function (response) {

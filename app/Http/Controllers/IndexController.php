@@ -11,23 +11,15 @@ use Mail;
 
 class IndexController extends Controller
 {
-
-    /**
-     * The class constructor
-     * @return void
-     */
-    public function __construct()
-    {
-        app()->setLocale('nl');
-    }
-
     /**
      * Function returns the only page view
      * @return Illuminate\View\View
      */
     public function index(): View
     {
-        return view('index');
+        return view('index')->with([
+                    'locale' => app()->getLocale()
+        ]);
     }
 
     /**
@@ -37,6 +29,8 @@ class IndexController extends Controller
      */
     public function submitForm(Request $request): JsonResponse
     {
+        app()->setLocale($request->locale);
+
         $validator = Validator::make($request->all(), [
                     'name' => 'required|max:255',
                     'email' => 'required|email|max:255',
@@ -49,8 +43,8 @@ class IndexController extends Controller
             $errors = array_map('ucfirst', $validator->errors()->all());
             return response()->json(['errors' => implode('<br />', $errors)]);
         }
-        
-        $body = view('email.contact')->with(['request'=> $request]);
+
+        $body = view('email.contact')->with(['request' => $request]);
 
         Mail::send('email.layout', ['body' => $body], function ($message) {
 
@@ -59,7 +53,7 @@ class IndexController extends Controller
             $message->to(env('MAIL_FROM_ADDRESS'));
         });
 
-        return response()->json(['success' => 'Formulier succesvol ingediend']);
+        return response()->json(['success' => trans('words.message sent successfully')]);
     }
 
 }
